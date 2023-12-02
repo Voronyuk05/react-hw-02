@@ -1,16 +1,18 @@
-export const App = () => {
+import { Greeting } from './Greeting/Greeting.jsx';
+import { Message } from './Message/Message.jsx';
+import { Button } from './Button/Button.jsx';
+
+export function App() {
+  const handleButtonClick = () => {
+    console.log('Кнопка була натиснута!');
+  };
+
+  
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Greeting name="Іван" />
+      <Message text="Ласкаво просимо!" />
+      <Button onClick={handleButtonClick} />
     </div>
-  );
-};
+  )
+}
